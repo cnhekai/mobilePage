@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>手机端适配</title>
+	<style type="text/css">
+		html{font-size:10px}
+			@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+			@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+			@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+			@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+			@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+			@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+			@media screen and (min-width:800px){html{font-size:25px}}
+		body,div,img,ul,li{
+			margin:0;
+			padding: 0;
+			font-size: 1rem;
+			text-align: center;
+			border: none;
+		}
+		#head{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		#headBackground{
+			width: 100%;
+		}
+		.headPortrait{
+			/*width: 17%;
+			height:27.7%;*/
+			width: 7rem;
+			height: 7rem;
+			border:3px;
+			border-style: solid;
+			border-color: rgb(254,77,39);
+			border-radius:50%;
+			position: absolute;
+			z-index: 2;
+			background-image: url(主头像.jpg);
+			background-repeat:no-repeat;
+			background-size: cover;
+			left: 50%;
+			margin-left: -3.5rem; 
+			top:80%;
+			margin-top:-4rem;
+		}	
+		#userName{
+			font-size: 1.8rem;
+			color:rgb(254,77,39);
+		}
+		#myRank{
+			width:100%;
+			height:7.2rem;
+			position: relative;
+		}
+		#myRankLeft{
+			width: 50%;
+			float:left;
+			margin-top: 1.7rem;
+		}
+		#myRankRight{
+			width: 50%;
+			float:left;
+			margin-top:1.7rem;
+		}
+		.myRankNumber{
+			font-size:2.5rem;
+			color:rgb(254,77,39);
+			margin-bottom: -0.4rem;
+		}
+		.myRankNumberAnnotation{
+			line-height: 2rem;
+			font-size:1.2rem;
+			color:rgb(194,194,194);
+			margin-top:-0.4rem;
+		}
+		.cut-offRule{
+			width:100%;
+			height:0.85rem;
+			background-color: rgb(245,245,245);
+		}
+		#rankMenu{
+			width:100%;
+			height:4.6rem;
+			line-height:4.6rem;
+			font-size: 1.4rem;
+			text-align: center;
+		}
+		#rankMenu>#left{
+			color:rgb(254,77,39);
+			font-size: 1.8rem;
+			width: 50%;
+			float: left;
+		}
+		#rankMenu>#right{
+			font-size: 1.8rem;
+			width: 50%;
+			float: left;
+		}
+		.cut-offRuleMin{
+			background-color: rgb(229,229,229);
+			width: 100%;
+			height: 3px;
+		}
+		ul{
+			width: 92%;
+			list-style: none;
+			padding:0 4%;
+		}
+		ul li{
+			width: 100%;
+			height: 7.6rem;
+			border-bottom: 2px solid rgb(229,229,229);
+		}
+		ul li .left{
+			width: 30%;
+			font-size: 2rem;
+			line-height: 7.6rem;
+			text-align: left;
+			float: left;
+			position:relative;
+		}
+		ul li .left span{
+			color: rgb(245,77,39);
+		}
+		ul li .left .pendent{
+			width: 2rem;
+			height: 2rem;
+			z-index: 1;
+			position: absolute;
+			top:0.7rem;
+			right:0.7rem;
+			transform:rotate(40deg);
+		}
+		ul li .left .rankHeadPortrait{
+			width: 5rem;
+			height: 5rem;
+			background-repeat: no-repeat;
+			border-radius: 50%;
+			float: right;
+			margin-top: 1.3rem;
+			margin-right: 1.3rem;
+			overflow:hidden;
+		}
+		ul li .left .rankHeadPortrait img{
+			width: 5rem;
+			background-repeat: no-repeat;
+			border-radius: 50%;
+			float: right;
+		}
+		ul li .right{
+			width: 70%;
+			float:left;
+			padding: 1.3rem 0;
+			text-align: left;
+		}
+		ul li .right .leftName{
+			font-size: 1.5rem;
+			line-height: 2.5rem;
+			font-weight:bold;
+		}
+		ul li .right .leftAddress{
+			font-size: 1.3rem;
+			line-height: 2.5rem;
+		}
+		ul li .right .rightNumber{
+			display:block;
+			color: #f54d27;
+			font-size: 1.6rem;
+			line-height: 2.5rem;
+			float: right;
+		}
+		.bottom{
+			width: 100%;
+			padding: 2.5rem 0;
+			font-size:1.5rem;
+			line-height:2rem;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div id="head">
+		<img id="headBackground" src="好友（同城）排行头部.jpg" alt="">
+		<div class="headPortrait"></div>
+	</div>
+	<span id="userName">旖旎风光</span>
+	<div id="myRank">
+		<div id="myRankLeft"><div class="myRankNumber">200</div><div class="myRankNumberAnnotation">我的排名</div></div>
+		<div style="position:absolute;z-index:1;width:2px;background: rgb(234,234,234);height:3rem;left:50%;top:2.5rem"></div>
+		<div id="myRankRight"><div class="myRankNumber">50</div><div class="myRankNumberAnnotation">今日上升</div></div>
+	</div>
+	<div class="cut-offRule"></div>
+	<div id="rankMenu">
+		<div id="left">好友排行<div style="width: 2px;height: 3rem;background-color: rgb(234,234,234);float: right;margin-top: 0.85rem;"></div></div>
+		<div id="right">同城排行</div>
+	</div>
+	<div class="cut-offRuleMin"></div>
+	<!--<ul >
+		<li>
+			<div class="left"><span>1</span><div class="rankHeadPortrait"></div><img src="皇冠.png" alt=""></div>
+			<div class="right">
+				<span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br>
+				<span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span>
+			</div>
+		</li>
+		<li>
+			<div class="left"><span>2</span><div class="rankHeadPortrait"></div><img src="皇冠2.png" alt=""></div>
+			<div class="right">
+				<span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br>
+				<span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span>
+			</div>
+		</li>
+		<li>
+			<div class="left"><span>3</span><div class="rankHeadPortrait"></div><img src="皇冠3.png" alt=""></div>
+			<div class="right">
+				<span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br>
+				<span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span>
+			</div>
+		</li>
+		<li>
+			<div class="left">4<div class="rankHeadPortrait"></div></div>
+			<div class="right">
+				<span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br>
+				<span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span>
+			</div>
+		</li>
+	</ul>-->
+	<script>
+		$(document).ready(function(){
+			creatFriendsList();
+			creatCivicList();
+			$("#civicList").hide();
+			$("#civicListBottom").hide();
+			function creatFriendsList(){
+				var friendsListJOSN=[{"rank":"1","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"2","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"3","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"4","HeadPortrait":"主头像.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"5","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"6","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"7","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"}];
+				var index=0;
+				$('body').append("<ul id='friendsList'></ul>");
+				$('body').append('<div id="friendsListBottom" class="bottom">查看更多</div>');
+				for (var i = 0; i < 4 ; i++) {
+					var left=$('<div class="left"></div>');
+					var rankHeadPortrait=$('<div class="rankHeadPortrait"></div>');
+					var li=$("<li></li>");
+					var right=$('<div class="right"></div>');
+					switch (i+1){
+						case 1:
+							left.append('<span>1</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 2:
+							left.append('<span>2</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠2.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 3:
+							left.append('<span>3</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠3.png" class="pendent" alt="">');
+							index++;
+							break;
+						default:
+							left.append(friendsListJOSN[i].rank);
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							index++;
+					}
+					right.append('<span class="leftName">'+friendsListJOSN[i].name+'</span><span class="rightNumber">'+friendsListJOSN[i].money+'</span><br><span class="leftAddress">'+friendsListJOSN[i].address+'</span><span class="rightNumber">'+friendsListJOSN[i].loss+'</span>');
+					li.append(left);
+					li.append(right);
+					$("#friendsList").append(li);
+					//$("#friendsList li").append('<div class="left"><span>'+(i+1)+'</span><div class="rankHeadPortrait"></div><img src="皇冠3.png" alt=""></div><div class="right"><span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br><span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span></div>')
+				};
+				$('#friendsListBottom').click(function(event) {
+					$(this).remove();
+					for (var i = index; i < friendsListJOSN.length ; i++) {
+					var left=$('<div class="left"></div>');
+					var rankHeadPortrait=$('<div class="rankHeadPortrait"></div>');
+					var li=$("<li></li>");
+					var right=$('<div class="right"></div>');
+					switch (i+1){
+						case 1:
+							left.append('<span>1</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 2:
+							left.append('<span>2</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠2.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 3:
+							left.append('<span>3</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠3.png" class="pendent" alt="">');
+							index++;
+							break;
+						default:
+							left.append(friendsListJOSN[i].rank);
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+friendsListJOSN[i].HeadPortrait+'" alt="" />');
+							index++;
+					}
+					right.append('<span class="leftName">'+friendsListJOSN[i].name+'</span><span class="rightNumber">'+friendsListJOSN[i].money+'</span><br><span class="leftAddress">'+friendsListJOSN[i].address+'</span><span class="rightNumber">'+friendsListJOSN[i].loss+'</span>');
+					li.append(left);
+					li.append(right);
+					$("#friendsList").append(li);
+					//$("#friendsList li").append('<div class="left"><span>'+(i+1)+'</span><div class="rankHeadPortrait"></div><img src="皇冠3.png" alt=""></div><div class="right"><span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br><span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span></div>')
+					};
+				});
+			};
+			function creatCivicList(){
+				var civicRankJOSN=[{"rank":"1","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓1","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"2","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓2","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"3","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"4","HeadPortrait":"主头像.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"5","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓5","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"6","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"},{"rank":"7","HeadPortrait":"头像图片2.jpg","name":"疯狂小草莓","money":"+5.00","address":"四川大学锦江学院","loss":"-2.00"}];
+				var index=0;
+				$('body').append("<ul id='civicList'></ul>");
+				$('body').append('<div id="civicListBottom" class="bottom">查看更多</div>');
+				for (var i = 0; i < 4 ; i++) {
+					var left=$('<div class="left"></div>');
+					var rankHeadPortrait=$('<div class="rankHeadPortrait"></div>');
+					var li=$("<li></li>");
+					var right=$('<div class="right"></div>');
+					switch (i+1){
+						case 1:
+							left.append('<span>1</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 2:
+							left.append('<span>2</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠2.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 3:
+							left.append('<span>3</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠3.png" class="pendent" alt="">');
+							index++;
+							break;
+						default:
+							left.append(civicRankJOSN[i].rank);
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							index++;
+					}
+					right.append('<span class="leftName">'+civicRankJOSN[i].name+'</span><span class="rightNumber">'+civicRankJOSN[i].money+'</span><br><span class="leftAddress">'+civicRankJOSN[i].address+'</span><span class="rightNumber">'+civicRankJOSN[i].loss+'</span>');
+					li.append(left);
+					li.append(right);
+					$("#civicList").append(li);
+					//$("#friendsList li").append('<div class="left"><span>'+(i+1)+'</span><div class="rankHeadPortrait"></div><img src="皇冠3.png" alt=""></div><div class="right"><span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br><span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span></div>')
+				};
+				$('#civicListBottom').click(function(event) {
+					$(this).remove();
+					for (var i = index; i < civicRankJOSN.length ; i++) {
+					var left=$('<div class="left"></div>');
+					var rankHeadPortrait=$('<div class="rankHeadPortrait"></div>');
+					var li=$("<li></li>");
+					var right=$('<div class="right"></div>');
+					switch (i+1){
+						case 1:
+							left.append('<span>1</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 2:
+							left.append('<span>2</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠2.png" class="pendent" alt="">');
+							index++;
+							break;
+						case 3:
+							left.append('<span>3</span>');
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							left.append('<img src="皇冠3.png" class="pendent" alt="">');
+							index++;
+							break;
+						default:
+							left.append(civicRankJOSN[i].rank);
+							left.append(rankHeadPortrait);
+							rankHeadPortrait.append('<img src="'+civicRankJOSN[i].HeadPortrait+'" alt="" />');
+							index++;
+					}
+					right.append('<span class="leftName">'+civicRankJOSN[i].name+'</span><span class="rightNumber">'+civicRankJOSN[i].money+'</span><br><span class="leftAddress">'+civicRankJOSN[i].address+'</span><span class="rightNumber">'+civicRankJOSN[i].loss+'</span>');
+					li.append(left);
+					li.append(right);
+					$("#civicList").append(li);
+					//$("#friendsList li").append('<div class="left"><span>'+(i+1)+'</span><div class="rankHeadPortrait"></div><img src="皇冠3.png" alt=""></div><div class="right"><span class="leftName">疯狂小草莓</span><span class="rightNumber">+5.00</span><br><span class="leftAddress">四川大学锦江学院</span><span class="rightNumber">-2.00</span></div>')
+					};
+				});
+			};
+			$('#right').click(function(event){
+				$(this).css('color','rgb(254,77,39)');
+				$('#left').css('color','#000000');
+				$('#friendsList').hide();
+				$('#friendsListBottom').hide();
+				$("#civicList").show();
+				$("#civicListBottom").show();
+			});
+			$('#left').click(function(event){
+				$(this).css('color','rgb(254,77,39)');
+				$('#right').css('color','#000000');
+				$('#friendsList').show();
+				$('#friendsListBottom').show();
+				$("#civicList").hide();
+				$("#civicListBottom").hide();
+			});
+		});
+	</script>
+</body>
+</html>
