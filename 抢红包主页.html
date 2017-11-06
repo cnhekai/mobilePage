@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>Document</title>
+	<style type="text/css">
+		html{font-size:10px}
+			@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+			@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+			@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+			@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+			@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+			@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+			@media screen and (min-width:800px){html{font-size:25px}}
+		body,ul,div{
+			margin:0;
+			padding:0;
+			border: 0;
+			color:rgb(191,191,191);
+			font-size:1.1rem;
+			border: 0;
+		}
+		body{
+			width:100%;
+			text-align: center;
+		}
+		img{
+			width: 100%;
+		}
+		.body{
+			margin:0 auto;
+			padding:0;
+			width:100%;
+		}
+		.caidan{
+			width:100%;
+		}
+		ul{
+			width:100%;
+			height: 5.6rem;
+			list-style: none;
+
+		}
+		li{
+			width:33%;
+			height: 100%;
+			float:left;
+		}
+		.shuju{
+			margin: 0 auto;
+			height: 5.6rem;
+			line-height: 1.3rem;
+			padding:1.5rem 0;
+		}
+		b{
+			color: #000000;
+		}
+		.fengexian{
+			width: 100%;
+			height: 0.85rem;
+			background: rgb(238,238,238);
+		}
+		#yugao{
+			width: 100%;
+			height:4.6rem;
+			line-height: 4.6rem;
+			text-align: left;
+			position:relative;		
+		}
+		#yugao>img{
+			position:absolute;
+			width: 1.6rem;
+			height: 1.6rem;
+			left: 4%;
+			top:50%;
+			margin-top:-0.8rem;
+		}
+		#yugao>b{
+			position:absolute;
+			left: 10%;
+		}
+		#yugao>.zhanzhu{
+			display: block;
+			position:absolute;
+			left:50%;
+			width: 50%;
+		}
+		#yugao>#shijian{
+			position:absolute;
+			left:67%;
+		}
+		#yugao>#shuliang{
+			float: right;
+			padding: 0 4%;
+		}
+		.paisong{
+			width: 100%;
+			height: 5.2rem;
+			line-height: 2.6rem;
+			text-align: left;
+		}
+		.paisong>.left{
+			text-align: left;
+			padding: 0 4%;
+		}
+		.paisong>.right{
+			float: right;
+			margin-right:4%;
+		}
+		.shouqi{
+			border: 2px;
+			border-color: rgb(255,114,0);
+			color: rgb(255,114,0);
+			width:28%;
+			height: 1.7rem;
+			border-style: solid;
+			text-align: center;
+			border-radius:1.2rem;
+			line-height: 1.7rem;
+			float: right;
+			margin-right:4%;
+		}
+		.shouqi .right{
+			color: rgb(255,114,0); 
+		}
+	</style>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div class="body">
+		<img src="01抢红包.jpg" alt="抢红包">
+		<div class="caidan">
+			<ul>
+				<li>
+					<div class="shuju"><b>99.9</b><br />我的红包</div>
+				</li>
+				<li>
+					<div class="shuju"><b>185.52</b><br />好友最高</div>
+				</li>
+				<li>
+					<div class="shuju"><b>520</b><br />贝壳最高</div>
+				</li>
+			</ul>
+		</div>
+		<div class="fengexian"></div>
+		<div id="yugao">
+			<img src="红包.png" alt="">
+			<b>红包预告：</b><span class="zhanzhu">爱迪眼科</span><span id="shijian">24:49</span><span id="shuliang">188个红包</span>
+		</div>
+		<div class="fengexian"></div>
+		<img src="01抢红包飞机.jpg">
+		<div class="paisong">
+			<span class="left"><b>四川航空红包派送</b></span><span class="right">距离抢红包还有<span id="daojishi" style="color: rgb(255,114,0)">01小时59分钟</span></span>
+			<br />
+			<span class="left">已有：123456人参加</span><div class="shouqi"><span class="right">手气排行榜</span></div>
+		</div>
+		<div class="fengexian"></div>
+		<img src="01抢红包可口可乐.jpg">
+		<div class="paisong">
+			<span class="left"><b>可口可乐红包派送</b></span><span class="right">剩余红包188个</span></span>
+			<br />
+			<span class="left">已有：123456人参加</span><div class="shouqi"><span class="right">手气排行榜</span></div>
+		</div>
+	</div>	
+
+</body>
+</html>

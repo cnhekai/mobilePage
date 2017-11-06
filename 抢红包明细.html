@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>红包明细</title>
+	<style type="text/css">
+		html{font-size:10px}
+			@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+			@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+			@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+			@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+			@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+			@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+			@media screen and (min-width:800px){html{font-size:25px}}
+		body,div,img,ul,li,a{
+			margin:0;
+			padding: 0;
+			font-size: 1rem;
+			text-align: center;
+			border: none;
+		}
+		#head{
+			width: 100%;
+			position: relative;
+			overflow:hidden;
+		}
+		#head img{
+			width: 100%;
+		}
+		#headPortrait{
+			width: 5rem;
+			height:5rem;
+			position:absolute;
+			left: 50%;
+			bottom:0;
+			margin-left: -2.5rem;
+			background-image: url(主头像.jpg);
+			background-size: cover;
+			border-radius:2.5rem;
+		}
+		#userName{
+			display:block;
+			margin-top:0.5rem;
+			height: 2rem;
+			font-size: 1.4rem;
+			color:#d53642;
+			line-height:2rem;
+		}
+		#content{
+			width: 100%;
+			padding: 2rem 0;
+			position:relative;
+			overflow:hidden;
+			line-height: 1.4rem;
+			color: #c3c2c2;
+		}
+		#content #left{
+			width: 50%;
+			float:left;
+		}
+		.emphasis{
+			color: #f54d27;
+			font-size:2.6rem;
+		}
+		.shuxian{
+			width: 0.1rem;
+			height:2.8rem;
+			background-color: #c3c2c2;
+			z-index: 1;
+			position:absolute;
+			left: 50%;
+			top:2rem;
+		}
+		#content #right{
+			width: 50%;
+			float: left;
+		}
+		#content #right a{
+			text-decoration:none;
+			display: inline-block;
+			border: 0.1rem solid #f54d27;
+			color: #f54d27;
+			width: 3.6rem;
+		}
+		#zhuanbeike{
+			display:block;
+			margin: 0 auto;
+			width: 40%;
+			height: 2.6rem;
+			line-height: 2.6rem;
+			font-size: 1.4rem;
+			border-radius:1.3rem;
+			border:0.1rem solid #f54d27;
+			text-decoration:none;
+			color:#f54d27;
+		}
+		.henxian{
+			width: 100%;
+			height:0.9rem;
+			background-color:#eeeeee;
+			margin-top:2rem;
+		}
+		#listTitle{
+			width: 94%;
+			height: 3.8rem;
+			line-height:3.8rem;
+			text-align:left;
+			padding: 0 3%;
+			font-size:1.3rem;
+		}
+		#list{
+			list-style:none;
+			width: 94%;
+			padding:0 3%;
+			border-top:0.1rem solid #eeeeee;
+		}
+		#list li{
+			width: 100%;
+			border-bottom: 0.1rem solid #eeeeee;
+			text-align:left;
+			overflow: hidden;
+		}
+		#list li img{
+			width:25%;
+			padding: 1.5rem 0;
+			display: block;
+			float: left;
+		}
+		#list li .listContent{
+			width: 38%;
+			float: left;
+			font-size: 1.3rem;
+			line-height: 1.5rem;
+			text-align: left;
+			padding: 1.5rem 0;
+			height: 6rem;
+			position: relative;
+		}
+		#list li .listContent .contentTime{
+			position: absolute;
+			color: #b3b3b3;
+			left: 0;
+			bottom:1.5rem;
+		}
+		#list li .listContentRight{
+			color: #f54d27;
+			width: 20%;
+			float: right;
+			margin-top:3rem;
+			text-align:right;
+			padding-right: 2rem;
+		}
+		#list li .listContentRight .listEmphasis{
+			font-size:1.6rem;
+		}
+	</style>
+</head>
+<body>
+	<div id="head"><img src="红包明细头.jpg"><div id="headPortrait"></div></div>
+	<span id="userName">旖旎风光</span>
+	<div id="content">
+		<div id="left"><span class="emphasis">99.5</span><br>我的红包收益</div>
+		<div class="shuxian"></div>
+		<div id="right"><span class="emphasis">-19.5</span><br>红包损友掠夺<a href="#">详细></a></div>
+	</div>
+	<a href="#" id="zhuanbeike">转为贝壳币</a>
+	<div class="henxian"></div>
+	<div id="listTitle">收益明细</div>
+	<ul id="list">
+		<li>
+			<img src="红包明细.jpg" alt="">
+			<div class="listContent">四川航空大学生特价机票派送活动<span class="contentTime">2017年5月26日</span></div>
+			<div class="listContentRight"><span class="listEmphasis">+9.95</span><br>-0.95</div>
+		</li>
+		<li>
+			<img src="红包明细.jpg" alt="">
+			<div class="listContent">四川航空大学生特价机票派送活动<span class="contentTime">2017年5月26日</span></div>
+			<div class="listContentRight"><span class="listEmphasis">+9.95</span><br>-0.95</div>
+		</li>
+	</ul>
+</body>
+</html>
